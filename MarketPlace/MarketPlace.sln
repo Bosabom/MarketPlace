@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketPlaceService.API", "MarketPlaceService.API\MarketPlaceService.API.csproj", "{E9BE43EC-3CC1-4F73-AE09-2D5B084F469C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9BE43EC-3CC1-4F73-AE09-2D5B084F469C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BE43EC-3CC1-4F73-AE09-2D5B084F469C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BE43EC-3CC1-4F73-AE09-2D5B084F469C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BE43EC-3CC1-4F73-AE09-2D5B084F469C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F07848F8-27CF-49A3-AFE2-125C941168B4}
+	EndGlobalSection
+EndGlobal
