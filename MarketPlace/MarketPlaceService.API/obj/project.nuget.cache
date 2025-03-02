@@ -38,8 +38,17 @@
     {
       "code": "NU1101",
       "level": "Error",
-      "message": "Unable to find package RedSail.SwaggerWrapper. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
-      "libraryId": "RedSail.SwaggerWrapper",
+      "message": "Unable to find package RedSail.EFWrapper. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "RedSail.EFWrapper",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package RedSail.KafkaWrapper. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "RedSail.KafkaWrapper",
       "targetGraphs": [
         "net5.0"
       ]
@@ -56,17 +65,8 @@
     {
       "code": "NU1101",
       "level": "Error",
-      "message": "Unable to find package RedSail.EFWrapper. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
-      "libraryId": "RedSail.EFWrapper",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Unable to find package RedSail.KafkaWrapper. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
-      "libraryId": "RedSail.KafkaWrapper",
+      "message": "Unable to find package RedSail.SwaggerWrapper. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "RedSail.SwaggerWrapper",
       "targetGraphs": [
         "net5.0"
       ]
