@@ -6,7 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RedSail.SwaggerWrapper;
-using System;
 using RedSail.PostgreSQLWrapper.Extensions;
 using RedSail.KafkaWrapper;
 
@@ -46,7 +45,6 @@ namespace MarketPlaceService.API
             {
                     consumer.BootstrapServers = kafkaConfig.BootstrapServers;
             });
-
 
             services.AddAutoMapper(typeof(Startup));
         }

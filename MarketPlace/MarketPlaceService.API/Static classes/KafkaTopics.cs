@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MarketPlaceService.API.Static_classes
+﻿namespace MarketPlaceService.API.Static_classes
 {
     public static class KafkaTopics
     {

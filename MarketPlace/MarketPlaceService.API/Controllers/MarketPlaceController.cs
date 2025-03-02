@@ -22,19 +22,19 @@ namespace MarketPlaceService.API.Controllers
         private readonly IProducerWrapper _producer;
         private readonly MapperConfiguration _mapperConfig;
 
-        public MarketPlaceController(IMarketPlaceRepository marketPlacerepository,IProducerWrapper producer)
+        public MarketPlaceController(IMarketPlaceRepository marketPlacerepository, IProducerWrapper producer)
         {
             _repository = marketPlacerepository;
             _producer = producer;
             _mapperConfig = new MapperConfiguration(config => config.AddProfile(new MarketPlaceMappingProfile()));
             _mapper = new Mapper(_mapperConfig);
         }
+
         // GET: api/<MarketPlaceController>
         [HttpGet]
         public async Task<IActionResult>Get()
         {
-
-            IEnumerable<MarketPlaceDTO> marketPlaces = _mapper.Map<IEnumerable<MarketPlace>,IEnumerable<MarketPlaceDTO>>(await _repository.GetAllAsync());
+            IEnumerable<MarketPlaceDTO> marketPlaces = _mapper.Map<IEnumerable<MarketPlace>, IEnumerable<MarketPlaceDTO>>(await _repository.GetAllAsync());
             if (marketPlaces == null)
             {
                 return NotFound();
@@ -46,7 +46,7 @@ namespace MarketPlaceService.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            MarketPlaceDTO marketPlace = _mapper.Map<MarketPlace,MarketPlaceDTO>(await _repository.GetAsync(id));
+            MarketPlaceDTO marketPlace = _mapper.Map<MarketPlace, MarketPlaceDTO>(await _repository.GetAsync(id));
             if (marketPlace == null)
             {
                 return NotFound();
@@ -58,30 +58,29 @@ namespace MarketPlaceService.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] MarketPlaceCreateDTO marketPlaceCreateDto)
         {
-            MarketPlaceDTO new_marketplaceDTO = _mapper.Map<MarketPlace,MarketPlaceDTO>(await _repository.CreateAsync(_mapper.Map<MarketPlaceCreateDTO,MarketPlace>(marketPlaceCreateDto)));
+            MarketPlaceDTO new_marketplaceDTO = _mapper.Map<MarketPlace, MarketPlaceDTO>(await _repository.CreateAsync(_mapper.Map<MarketPlaceCreateDTO, MarketPlace>(marketPlaceCreateDto)));
             if (new_marketplaceDTO == null)
             {
                 return BadRequest();
             }
 
             // int id = new_marketPlace.MarketPlaceId;
-            await _producer.SendAsync(new_marketplaceDTO,OperationCode.Create, KafkaTopics.producer);
+            await _producer.SendAsync(new_marketplaceDTO, OperationCode.Create, KafkaTopics.producer);
             return Ok(new_marketplaceDTO);
         }
 
         // PUT api/<MarketPlaceController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] MarketPlaceDTO marketPlaceDTO)
+        public async Task<IActionResult> Put(int id, [FromBody]MarketPlaceDTO marketPlaceDTO)
         {
-            MarketPlaceDTO updated_marketplace = _mapper.Map<MarketPlace,MarketPlaceDTO>(await _repository.UpdateAsync(_mapper.Map<MarketPlaceDTO,MarketPlace>(marketPlaceDTO)));
+            MarketPlaceDTO updated_marketplace = _mapper.Map<MarketPlace,MarketPlaceDTO>(await _repository.UpdateAsync(_mapper.Map<MarketPlaceDTO, MarketPlace>(marketPlaceDTO)));
             if (updated_marketplace == null)
             {
                 return BadRequest();
             }
-            await _producer.SendAsync(updated_marketplace,OperationCode.Update, KafkaTopics.producer);
+            await _producer.SendAsync(updated_marketplace, OperationCode.Update, KafkaTopics.producer);
 
-            return Ok(updated_marketplace);
-            
+            return Ok(updated_marketplace); 
         }
 
         // DELETE api/<MarketPlaceController>/5
@@ -96,7 +95,7 @@ namespace MarketPlaceService.API.Controllers
 
             var deleted_marketPlaceDTO = _mapper.Map<MarketPlace, MarketPlaceDTO>(await _repository.DeleteAsync(new MarketPlace { MarketPlaceId = id }));
             
-            await _producer.SendAsync<object>(null,OperationCode.Delete,KafkaTopics.producer);
+            await _producer.SendAsync<object>(null, OperationCode.Delete, KafkaTopics.producer);
 
             return NoContent();
         }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MarketPlaceService.API.Options
+﻿namespace MarketPlaceService.API.Options
 {
     public class PostgreOptions
     {

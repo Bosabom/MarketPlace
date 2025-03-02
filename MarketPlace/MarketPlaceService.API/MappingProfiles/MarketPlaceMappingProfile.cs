@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using MarketPlaceService.API.DataTransfer;
 using MarketPlaceService.API.Models;
 
