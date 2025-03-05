@@ -1,5 +1,11 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
+/common
+/MarketPlace/.vs/
 /MarketPlace/.vs/MarketPlace/FileContentIndex
+/MarketPlace/MarketPlaceService.API/bin
+/MarketPlace/MarketPlaceService.API/obj
+/MarketPlace/MarketPlaceService.API/MarketPlaceService.API.csproj.user
+/MarketPlace/MarketPlaceService.API/appsettings.json
+/MarketPlace/MarketPlaceService.API/appsettings.Development.json
