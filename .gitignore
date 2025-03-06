@@ -1,7 +1,7 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-/common
+/common/
 /MarketPlace/.vs/
 /MarketPlace/.vs/MarketPlace/FileContentIndex
 /MarketPlace/MarketPlaceService.API/bin
@@ -9,3 +9,23 @@
 /MarketPlace/MarketPlaceService.API/MarketPlaceService.API.csproj.user
 /MarketPlace/MarketPlaceService.API/appsettings.json
 /MarketPlace/MarketPlaceService.API/appsettings.Development.json
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+.vscode/extensions.json
+MarketPlace/MarketPlaceService.API/obj/MarketPlaceService.API.csproj.nuget.dgspec.json
+MarketPlace/MarketPlaceService.API/obj/project.assets.json
+MarketPlace/MarketPlaceService.API/obj/project.nuget.cache
+MarketPlace/MarketPlaceService.API/obj/Debug/net5.0/MarketPlaceService.API.AssemblyInfo.cs
+MarketPlace/MarketPlaceService.API/obj/Debug/net5.0/MarketPlaceService.API.AssemblyInfoInputs.cache
+MarketPlace/MarketPlaceService.API/obj/Debug/net5.0/MarketPlaceService.API.assets.cache
+MarketPlace/MarketPlaceService.API/obj/Debug/net5.0/MarketPlaceService.API.GeneratedMSBuildEditorConfig.editorconfig
